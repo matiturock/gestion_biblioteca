@@ -1,4 +1,4 @@
-package domain;
+package domain.persona;
 
 public class Libro {
   private String titulo;

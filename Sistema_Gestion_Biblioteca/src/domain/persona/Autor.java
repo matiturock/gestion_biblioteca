@@ -1,6 +1,8 @@
-package domain;
+package domain.persona;
 
 import java.time.LocalDate;
+
+import domain.Genero;
 
 public class Autor extends Persona {
     private Genero genero;
