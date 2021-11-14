@@ -1,6 +1,5 @@
 package domain.libro;
 
-import domain.Genero;
 import domain.persona.Autor;
 
 public class CopiaLibro extends Libro {
