@@ -30,7 +30,7 @@ public class Autor extends Persona {
 
     @Override
     public String toString() {
-        return "Autor [fechaFallecimiento=" + fechaFallecimiento + ", nacionalidad=" + nacionalidad + "]";
+        return super.getNombre() + "-" + this.getFechaNacimiento() + "-" + this.getFechaFallecimiento();
     }
 
 }

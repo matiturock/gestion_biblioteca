@@ -2,6 +2,8 @@ package domain.persona;
 
 import java.time.LocalDate;
 
+import domain.libro.CopiaLibro;
+
 public class Lector extends Persona {
     private EstadoLector EstadoLector;
 
@@ -23,11 +25,11 @@ public class Lector extends Persona {
         return "Lector [EstadoLector=" + EstadoLector + "]";
     }
 
-    public void reservarLibro(Libro libro) {
+    public void reservarLibro(CopiaLibro libro) {
 
     }
 
-    public void devolverLibro(Libro libro) {
+    public void devolverLibro(CopiaLibro libro) {
 
     }
 
