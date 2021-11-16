@@ -7,7 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import domain.libro.CopiaLibro;
 import domain.libro.EstadoLibro;
 import domain.libro.Genero;
 import domain.persona.Autor;
+import utils.Generador;
 
 public class AccesoDatosArchivo implements IAccesoDatos {
 
@@ -66,7 +66,7 @@ public class AccesoDatosArchivo implements IAccesoDatos {
                 String titulo = libroAtributos[0];
                 Genero genero = Genero.valueOf(libroAtributos[1]);
                 // los atributos de autor están separados por '+'
-                Autor autor = instanciarAutor(libroAtributos[2]);
+                Autor autor = Generador.instanciarAutor(libroAtributos[2]);
                 Integer idCopia = Integer.parseInt(libroAtributos[3]);
                 EstadoLibro estadoLibro = EstadoLibro.valueOf(libroAtributos[4]);
 
@@ -88,13 +88,6 @@ public class AccesoDatosArchivo implements IAccesoDatos {
         }
 
         return libros;
-    }
-
-    private Autor instanciarAutor(String string) {
-        String[] atributosAutor = string.split("-");
-        var autor = new Autor(atributosAutor[0], LocalDate.parse(atributosAutor[1]), LocalDate.parse(atributosAutor[2]),
-                atributosAutor[3]);
-        return autor;
     }
 
     @Override

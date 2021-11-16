@@ -30,7 +30,8 @@ public class CopiaLibro extends Libro {
 
     @Override
     public String toString() {
-        return "CopiaLibro [estadoLibro=" + estadoLibro + ", idCopia=" + idCopia + "]";
+        return super.getTitulo() + "," + super.getGenero() + "," + super.getAutor() + "," + this.getIdCopia() + ","
+                + this.getEstadoLibro();
     }
 
 }
