@@ -15,8 +15,6 @@ public interface IAccesoDatos {
 
     void escribir(CopiaLibro copiaLibro, Boolean anexar, String nombreRecurso);
 
-    void actualizar(CopiaLibro copiaLibro, String nombreRecurso);
-
     void borrar(CopiaLibro copiaLibro, String nombreRecurso);
 
     String buscar(String nombreRecurso, String buscar);

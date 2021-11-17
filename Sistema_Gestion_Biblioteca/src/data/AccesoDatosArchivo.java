@@ -105,12 +105,6 @@ public class AccesoDatosArchivo implements IAccesoDatos {
     }
 
     @Override
-    public void actualizar(CopiaLibro copiaLibro, String nombreRecurso) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
     public void borrar(CopiaLibro copiaLibro, String nombreRecurso) {
         var archivo = new File(nombreRecurso);
         if (archivo.exists()) {
