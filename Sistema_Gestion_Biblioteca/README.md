@@ -1,18 +1,22 @@
-## Getting Started
+# Sistema de Gestión de Biblioteca
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+El presente es un Trabajo Final Integrador en el marco de la materia **Laboratorio de Programación 2**, de la carrera Tecnicatura Universitaria en Programación, de la UTN sede Resistencia, año 2021.
 
-## Folder Structure
+## Qué hace la app?
 
-The workspace contains two folders by default, where:
+La aplicación está pensada para ser usada por una bibliotecaria mediante comandos en consola.
+La base de datos donde se depositan los datos de los libros es un archivo.txt, con registros (renglones) separando los valores por comas.
+La app permite:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Listar libros
+- Cargar libros
+- Cargar lectores
+- Prestra libros y listar libros prestados
+- Identificar cuando un libro está en mora
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Integrantes del grupo
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Insfran Maximiliano
+- Piedra Paula
+- Ramírez Jésica
+- Almirón R. Matías
