@@ -27,7 +27,7 @@ public class TestCositas {
                 EstadoLibro.EN_BIBLIOTECA);
         System.out.println(copiaLibroNuevo);
 
-        String libroString = "Carrie,NOVELA,Sthepen King;1947-09-21;2022-05-04;Estados Unidos,5,EN_BIBLIOTECA";
+        String libroString = "Carrie,NOVELA,Sthepen King;1947-09-21;null;Estados Unidos,5,EN_BIBLIOTECA";
         CopiaLibro libroDesdeString = Generador.instanciarCopiaLibro(libroString);
         System.out.println(libroDesdeString);
 

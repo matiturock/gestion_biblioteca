@@ -5,10 +5,13 @@ import data.IAccesoDatos;
 import domain.libro.CopiaLibro;
 import utils.Generador;
 
-public class OperacionesBiblioteca implements IOperacionesBiblioteca {
+/**
+ * capa intermedia entre data y view
+ */
+public class Operaciones implements IOperaciones {
     private final IAccesoDatos datos;
 
-    public OperacionesBiblioteca() {
+    public Operaciones() {
         this.datos = new AccesoDatosArchivo();
     }
 
@@ -19,7 +22,6 @@ public class OperacionesBiblioteca implements IOperacionesBiblioteca {
             datos.crearBase(NOMBRE_RECURSO);
         } else
             datos.crearBase(NOMBRE_RECURSO);
-
     }
 
     @Override

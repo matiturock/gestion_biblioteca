@@ -16,30 +16,30 @@ La app permite:
 
 ## Estructura
 
-# data
+### **data**
 
 Se encarga de manejar la creación, lectura y escritura del arhivo que contiene los registros de los libros.
 
-# domain
+### **domain**
 
 Dominio del problema. Contiene los paquetes:
 
 - libro: para CopiaLibro
 - persona: para Autor y Lector
 
-# operations
+### **operations**
 
 Operaciones que puede realizar la bibliotecaria. Conecta la capa **data** con la **view** para lograr un bajo acoplamiento y alta cohesión.
 
-# test
+### **test**
 
 Se usa para probar funcionalidades a ser implmentandas en la app.
 
-# utils
+### **utils**
 
 Se guardan las clases generadoras de objetos (como ser Autor o CopiaLibro) o formateadoras de Strings.
 
-# view
+### **view**
 
 Vista interfaz de cara al usuario final. Se conecta a la capa **operations**.
 

@@ -1,6 +1,6 @@
 package operations;
 
-public interface IOperacionesBiblioteca {
+public interface IOperaciones {
     String NOMBRE_RECURSO = "libros.txt";
 
     void iniciarArchivo();
