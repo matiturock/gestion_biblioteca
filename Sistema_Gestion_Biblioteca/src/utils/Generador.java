@@ -1,14 +1,23 @@
 package utils;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 import domain.libro.CopiaLibro;
 import domain.libro.EstadoLibro;
 import domain.libro.Genero;
 import domain.persona.Autor;
+import operations.IOperacion;
+import operations.OperacionBiblioteca;
 
 public class Generador {
 
+    /**
+     * crea un objeto de tipo CopiaLibro en base a un String con sus atributos
+     * 
+     * @param String con atributosLibro
+     * @return CopiaLibro
+     */
     public static CopiaLibro instanciarCopiaLibro(String atributosLibro) {
         String[] atributosLibroArr = atributosLibro.split(",");
         for (String string : atributosLibroArr) {
@@ -25,6 +34,12 @@ public class Generador {
         return copiaLibro;
     }
 
+    /**
+     * crea un objeto de tipo Autor en basea un string con sus atributos
+     * 
+     * @param atributosAutor
+     * @return
+     */
     public static Autor instanciarAutor(String atributosAutor) {
         String[] atributosAutorArr = atributosAutor.split(";");
         for (String string : atributosAutorArr) {
@@ -42,6 +57,16 @@ public class Generador {
 
         var autor = new Autor(nombre, fechaNacimiento, fechaFallecimiento, paisOrigen);
         return autor;
+    }
+
+    /**
+     * crea una copia de libro, para agregar a la base de datos, en base a inputs
+     * del ususario
+     * 
+     * @return
+     */
+    public static String crearCopiaLibro(Scanner scanner, IOperacion operacion) {
+        return null;
     }
 
 }

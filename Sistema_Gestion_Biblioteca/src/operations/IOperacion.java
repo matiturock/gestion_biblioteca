@@ -1,11 +1,11 @@
 package operations;
 
-public interface IOperaciones {
+public interface IOperacion {
     String NOMBRE_RECURSO = "libros.txt";
 
     void iniciarArchivo();
 
-    void agregarLibro(String atributosLibro);
+    void agregarCopiaLibro(String atributosLibro);
 
     void listarLibros();
 

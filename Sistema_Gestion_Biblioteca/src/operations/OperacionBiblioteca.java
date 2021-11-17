@@ -8,10 +8,10 @@ import utils.Generador;
 /**
  * capa intermedia entre data y view
  */
-public class Operaciones implements IOperaciones {
+public class OperacionBiblioteca implements IOperacion {
     private final IAccesoDatos datos;
 
-    public Operaciones() {
+    public OperacionBiblioteca() {
         this.datos = new AccesoDatosArchivo();
     }
 
@@ -25,7 +25,7 @@ public class Operaciones implements IOperaciones {
     }
 
     @Override
-    public void agregarLibro(String atributosLibro) {
+    public void agregarCopiaLibro(String atributosLibro) {
         CopiaLibro copiaLibro = Generador.instanciarCopiaLibro(atributosLibro);
         boolean anexar = false;
 
@@ -36,14 +36,21 @@ public class Operaciones implements IOperaciones {
 
     @Override
     public void listarLibros() {
-        // TODO Auto-generated method stub
-
+        var listadoLibros = this.datos.listaCopiaLibros(NOMBRE_RECURSO);
+        for (CopiaLibro libro : listadoLibros) {
+            System.out.println(libro);
+        }
     }
 
     @Override
     public void buscarPelicula(String tituloLibro) {
-        // TODO Auto-generated method stub
+        String resultado = null;
+        resultado = this.datos.buscar(NOMBRE_RECURSO, tituloLibro);
 
+        if (resultado != null)
+            System.out.println(resultado);
+        else
+            System.out.println("Libro no encontrado");
     }
 
 }
