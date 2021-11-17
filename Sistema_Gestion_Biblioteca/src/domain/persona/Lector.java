@@ -22,7 +22,7 @@ public class Lector extends Persona {
 
     @Override
     public String toString() {
-        return "Lector [EstadoLector=" + EstadoLector + "]";
+        return "Lector: Nombre '" + this.getNombre() + "' - Estado Lector '" + this.getEstadoLector() + "'";
     }
 
     public void reservarLibro(CopiaLibro libro) {

@@ -2,6 +2,9 @@ package domain.persona;
 
 import java.time.LocalDate;
 
+/**
+ * Clase base
+ */
 public class Persona {
     private String nombre;
     private LocalDate fechaNacimiento;
