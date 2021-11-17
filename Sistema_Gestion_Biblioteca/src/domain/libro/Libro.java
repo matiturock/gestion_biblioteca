@@ -37,9 +37,4 @@ public class Libro {
         this.autor = autor;
     }
 
-    @Override
-    public String toString() {
-        return "Libro [autor=" + autor + ", genero=" + genero + ", titulo=" + titulo + "]";
-    }
-
 }

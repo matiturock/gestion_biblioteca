@@ -4,12 +4,12 @@ import java.time.LocalDate;
 
 public class Autor extends Persona {
     private LocalDate fechaFallecimiento;
-    private String nacionalidad;
+    private String paisOrigen;
 
-    public Autor(String nombre, LocalDate fechaNacimiento, LocalDate fechaFallecimiento, String nacionalidad) {
+    public Autor(String nombre, LocalDate fechaNacimiento, LocalDate fechaFallecimiento, String paisOrigen) {
         super(nombre, fechaNacimiento);
         this.fechaFallecimiento = fechaFallecimiento;
-        this.nacionalidad = nacionalidad;
+        this.paisOrigen = paisOrigen;
     }
 
     public LocalDate getFechaFallecimiento() {
@@ -21,16 +21,17 @@ public class Autor extends Persona {
     }
 
     public String getNacionalidad() {
-        return nacionalidad;
+        return paisOrigen;
     }
 
     public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
+        this.paisOrigen = nacionalidad;
     }
 
     @Override
     public String toString() {
-        return super.getNombre() + "-" + this.getFechaNacimiento() + "-" + this.getFechaFallecimiento();
+        return super.getNombre() + ";" + this.getFechaNacimiento() + ";" + this.getFechaFallecimiento() + ";"
+                + this.getNacionalidad();
     }
 
 }

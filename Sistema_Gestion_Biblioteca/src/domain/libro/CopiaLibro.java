@@ -3,21 +3,21 @@ package domain.libro;
 import domain.persona.Autor;
 
 public class CopiaLibro extends Libro {
-    private Integer idCopia;
+    private Integer cantidad;
     private EstadoLibro estadoLibro;
 
-    public CopiaLibro(String titulo, Genero genero, Autor autor, Integer idCopia, EstadoLibro estadoLibro) {
+    public CopiaLibro(String titulo, Genero genero, Autor autor, Integer cantidad, EstadoLibro estadoLibro) {
         super(titulo, genero, autor);
-        this.idCopia = idCopia;
+        this.cantidad = cantidad;
         this.estadoLibro = estadoLibro;
     }
 
     public Integer getIdCopia() {
-        return idCopia;
+        return cantidad;
     }
 
     public void setIdCopia(Integer idCopia) {
-        this.idCopia = idCopia;
+        this.cantidad = idCopia;
     }
 
     public EstadoLibro getEstadoLibro() {
