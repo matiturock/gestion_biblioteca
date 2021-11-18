@@ -11,12 +11,10 @@ public interface IAccesoDatos {
 
     boolean existe(String nombreRecurso);
 
-    List<Libro> listaLibros(String nombreRecurso);
+    List<Libro> listarLibros(String nombreRecurso);
 
     void escribir(Libro libro, Boolean anexar, String nombreRecurso);
 
-    void borrar(Libro libro, String nombreRecurso);
-
-    String buscar(String nombreRecurso, String buscar);
+    Libro buscarLibro(String nombreRecurso, String buscar);
 
 }

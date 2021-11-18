@@ -12,6 +12,7 @@ import java.util.List;
 
 import domain.Genero;
 import domain.Libro;
+import utils.Constructor;
 
 public class AccesoDatosArchivo implements IAccesoDatos {
 
@@ -48,33 +49,22 @@ public class AccesoDatosArchivo implements IAccesoDatos {
     }
 
     @Override
-    public List<Libro> listaCopiaLibros(String nombreRecurso) {
+    public List<Libro> listarLibros(String nombreRecurso) {
         File archivo = new File(nombreRecurso);
         List<Libro> libros = new ArrayList<>();
 
         try {
-            var entrada = new BufferedReader(new FileReader(archivo));
-            String registro = null;
-            registro = entrada.readLine();
+            var registro = new BufferedReader(new FileReader(archivo));
+            String atributosLibro = null;
+            atributosLibro = registro.readLine();
 
-            while (registro != null) {
-                // capturar distintos campos del archivo csv
-                String[] libroAtributos = registro.split(",");
-                String titulo = libroAtributos[0];
-                Genero genero = Genero.valueOf(libroAtributos[1]);
-                // los atributos de autor están separados por '+'
-                Autor autor = Generador.instanciarAutor(libroAtributos[2]);
-                Integer idCopia = Integer.parseInt(libroAtributos[3]);
-                EstadoLibro estadoLibro = EstadoLibro.valueOf(libroAtributos[4]);
-
-                var copiaLibro = new CopiaLibro(titulo, genero, autor, idCopia, estadoLibro);
-                libros.add(copiaLibro);
-
-                // se mueve el punto de lectura a la siguiente línea
-                registro = entrada.readLine();
+            while (atributosLibro != null) {
+                Libro libro = Constructor.instanciarLibro(atributosLibro);
+                libros.add(libro);
+                atributosLibro = registro.readLine();
             }
 
-            entrada.close();
+            registro.close();
 
         } catch (FileNotFoundException e) {
             System.out.println("Error al cargar el archivo: " + e);
@@ -88,13 +78,13 @@ public class AccesoDatosArchivo implements IAccesoDatos {
     }
 
     @Override
-    public void escribir(CopiaLibro copiaLibro, Boolean anexar, String nombreRecurso) {
+    public void escribir(Libro libro, Boolean anexar, String nombreRecurso) {
         var archivo = new File(nombreRecurso);
         try {
             var escritura = new PrintWriter(new FileWriter(archivo, anexar));
-            escritura.println(copiaLibro);
+            escritura.println(libro.toString());
             escritura.close();
-            System.out.println("Se ha escrito información en el archivo: " + copiaLibro);
+            System.out.println("Se ha escrito información en el archivo: " + libro);
         } catch (IOException e) {
             System.out.println("Error al escribir en archivo");
             e.printStackTrace();
@@ -102,34 +92,26 @@ public class AccesoDatosArchivo implements IAccesoDatos {
     }
 
     @Override
-    public void borrar(CopiaLibro copiaLibro, String nombreRecurso) {
-        var archivo = new File(nombreRecurso);
-        if (archivo.exists()) {
-            archivo.delete();
-            System.out.println("Se ha borrado el archivo: " + nombreRecurso);
-        }
-        System.out.println("El archivo no existe");
-    }
-
-    @Override
-    public String buscar(String nombreRecurso, String buscar) {
+    public Libro buscarLibro(String nombreRecurso, String buscarLibroPorTitulo) {
         var arachivo = new File(nombreRecurso);
-        String resultadoBusqueda = null;
+        Libro resultadoBusquedaLibro = null;
 
         try {
-            var entrada = new BufferedReader(new FileReader(arachivo));
-            String salida = null;
-            salida = entrada.readLine();
+            var registro = new BufferedReader(new FileReader(arachivo));
+            String atributosLibro = null;
+            atributosLibro = registro.readLine();
 
-            while (salida != null) {
-                String[] atributosLibro = salida.split(",");
-                String tituloLibro = atributosLibro[0];
-                if (buscar != null && buscar.equalsIgnoreCase(tituloLibro))
-                    resultadoBusqueda = salida;
-                salida = entrada.readLine();
+            while (atributosLibro != null) {
+                String[] atributosLibroArr = atributosLibro.split(",");
+                String tituloLibro = atributosLibroArr[0];
+
+                if (buscarLibroPorTitulo != null && buscarLibroPorTitulo.equalsIgnoreCase(tituloLibro))
+                    resultadoBusquedaLibro = Constructor.instanciarLibro(atributosLibro);
+
+                atributosLibro = registro.readLine();
             }
 
-            entrada.close();
+            registro.close();
 
         } catch (FileNotFoundException e) {
             System.out.println("Error al abrir el archivo al buscar");
@@ -139,7 +121,7 @@ public class AccesoDatosArchivo implements IAccesoDatos {
             e.printStackTrace();
         }
 
-        return resultadoBusqueda;
+        return resultadoBusquedaLibro;
     }
 
 }

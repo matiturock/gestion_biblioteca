@@ -36,20 +36,21 @@ public class OperacionBiblioteca implements IOperacion {
 
     @Override
     public void listarLibros() {
-        var listadoLibros = this.datos.listaLibros(NOMBRE_RECURSO);
-        for (Libro libro : listadoLibros) {
-            System.out.println(libro);
+        var libros = this.datos.listarLibros(NOMBRE_RECURSO);
+        for (Libro libro : libros) {
+            libro.mostrarInformacion();
         }
     }
 
     @Override
     public void buscarLibro(String tituloLibro) {
-        String resultado = null;
-        resultado = this.datos.buscar(NOMBRE_RECURSO, tituloLibro);
+        Libro resultadoLibro = null;
+        resultadoLibro = this.datos.buscarLibro(NOMBRE_RECURSO, tituloLibro);
 
-        if (resultado != null)
-            System.out.println(resultado);
-        else
+        if (resultadoLibro != null) {
+            System.out.println("Libro encontrado");
+            resultadoLibro.mostrarInformacion();
+        } else
             System.out.println("Libro no encontrado");
     }
 

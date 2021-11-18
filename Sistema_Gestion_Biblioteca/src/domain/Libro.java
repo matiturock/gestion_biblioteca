@@ -1,7 +1,5 @@
 package domain;
 
-import domain.Genero;
-
 public class Libro {
     private String titulo;
     private Genero genero;
@@ -10,7 +8,8 @@ public class Libro {
     private int cantidadPrestados;
     private int totalCopias;
 
-    public Libro(String titulo, Genero genero, String autor, int cantidadEnBiblioteca, int cantidadPrestados, int totalCopias) {
+    public Libro(String titulo, Genero genero, String autor, int cantidadEnBiblioteca, int cantidadPrestados,
+            int totalCopias) {
         this.titulo = titulo;
         this.genero = genero;
         this.autor = autor;
@@ -65,5 +64,14 @@ public class Libro {
 
     public void setTotalCopias(int totalCopias) {
         this.totalCopias = totalCopias;
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("TITULO:     " + this.getTitulo());
+        System.out.println("- Genero:   " + this.getGenero());
+        System.out.println("- Autor:    " + this.getAutor());
+        System.out.println("- Copias totales:       " + this.getTotalCopias());
+        System.out.println("  * En biblioteca:      " + this.getCantidadEnBiblioteca());
+        System.out.println("  * Prestado:           " + this.getCantidadEnBiblioteca());
     }
 }
