@@ -2,8 +2,8 @@ package operations;
 
 import data.AccesoDatosArchivo;
 import data.IAccesoDatos;
-import domain.libro.CopiaLibro;
-import utils.Generador;
+import domain.Libro;
+import utils.Constructor;
 
 /**
  * capa intermedia entre data y view
@@ -25,25 +25,25 @@ public class OperacionBiblioteca implements IOperacion {
     }
 
     @Override
-    public void agregarCopiaLibro(String atributosLibro) {
-        CopiaLibro copiaLibro = Generador.instanciarCopiaLibro(atributosLibro);
+    public void agregarLibro(String atributosLibro) {
+        Libro libro = Constructor.instanciarLibro(atributosLibro);
         boolean anexar = false;
 
         anexar = this.datos.existe(NOMBRE_RECURSO);
-        datos.escribir(copiaLibro, anexar, NOMBRE_RECURSO);
+        datos.escribir(libro, anexar, NOMBRE_RECURSO);
 
     }
 
     @Override
     public void listarLibros() {
-        var listadoLibros = this.datos.listaCopiaLibros(NOMBRE_RECURSO);
-        for (CopiaLibro libro : listadoLibros) {
+        var listadoLibros = this.datos.listaLibros(NOMBRE_RECURSO);
+        for (Libro libro : listadoLibros) {
             System.out.println(libro);
         }
     }
 
     @Override
-    public void buscarPelicula(String tituloLibro) {
+    public void buscarLibro(String tituloLibro) {
         String resultado = null;
         resultado = this.datos.buscar(NOMBRE_RECURSO, tituloLibro);
 

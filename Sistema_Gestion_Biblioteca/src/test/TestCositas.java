@@ -2,9 +2,7 @@ package test;
 
 import java.time.LocalDate;
 
-import domain.libro.CopiaLibro;
-import domain.libro.EstadoLibro;
-import domain.libro.Genero;
+import domain.Genero;
 import domain.persona.Autor;
 import utils.Generador;
 
