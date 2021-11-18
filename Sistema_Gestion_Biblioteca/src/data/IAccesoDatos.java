@@ -1,6 +1,6 @@
 package data;
 
-import domain.libro.CopiaLibro;
+import domain.Libro;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ public interface IAccesoDatos {
 
     boolean existe(String nombreRecurso);
 
-    List<CopiaLibro> listaCopiaLibros(String nombreRecurso);
+    List<Libro> listaLibros(String nombreRecurso);
 
-    void escribir(CopiaLibro copiaLibro, Boolean anexar, String nombreRecurso);
+    void escribir(Libro libro, Boolean anexar, String nombreRecurso);
 
-    void borrar(CopiaLibro copiaLibro, String nombreRecurso);
+    void borrar(Libro libro, String nombreRecurso);
 
     String buscar(String nombreRecurso, String buscar);
 

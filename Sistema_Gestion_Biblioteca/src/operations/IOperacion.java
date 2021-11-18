@@ -5,9 +5,9 @@ public interface IOperacion {
 
     void iniciarArchivo();
 
-    void agregarCopiaLibro(String atributosLibro);
+    void agregarLibro(String atributosLibro);
 
     void listarLibros();
 
-    void buscarPelicula(String tituloLibro);
+    void buscarLibro(String tituloLibro);
 }

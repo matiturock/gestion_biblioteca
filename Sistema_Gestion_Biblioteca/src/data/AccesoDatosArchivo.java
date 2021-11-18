@@ -10,11 +10,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import domain.libro.CopiaLibro;
-import domain.libro.EstadoLibro;
-import domain.libro.Genero;
-import domain.persona.Autor;
-import utils.Generador;
+import domain.Genero;
+import domain.Libro;
 
 public class AccesoDatosArchivo implements IAccesoDatos {
 
@@ -51,9 +48,9 @@ public class AccesoDatosArchivo implements IAccesoDatos {
     }
 
     @Override
-    public List<CopiaLibro> listaCopiaLibros(String nombreRecurso) {
+    public List<Libro> listaCopiaLibros(String nombreRecurso) {
         File archivo = new File(nombreRecurso);
-        List<CopiaLibro> libros = new ArrayList<>();
+        List<Libro> libros = new ArrayList<>();
 
         try {
             var entrada = new BufferedReader(new FileReader(archivo));

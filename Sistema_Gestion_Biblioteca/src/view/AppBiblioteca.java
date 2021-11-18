@@ -7,7 +7,7 @@ import operations.OperacionBiblioteca;
 import utils.Generador;
 
 /**
- * Vista de interfaz de consola de cara al usuaario final Conecta las opciones
+ * Vista de interfaz de consola de cara al usuario final Conecta las opciones
  * de usuario con las Operaciones
  */
 
@@ -19,59 +19,53 @@ public class AppBiblioteca {
         IOperacion operacion = new OperacionBiblioteca();
 
         while (opcion != 0) {
-            mostrarMenuPrincipal();
+            System.out.println("SISTEMA GESTION DE BIBLIOTECA");
+            System.out.println("=============================");
+            System.out.println("1- Iniciar archivo");
+            System.out.println("2- Listar libros");
+            System.out.println("3- Agregar libro");
+            System.out.println("4- Buscar libro");
+            System.out.println("0- Salir");
             try {
                 opcion = Integer.parseInt(scanner.nextLine());
-                evaluarOpcion(opcion, operacion, scanner);
+                switch(opcion){
+                    case 1:
+                        operacion.iniciarArchivo();
+                        System.out.println("Archivo creado");
+                        break;
+                    case 2:
+                        System.out.println("LISTADO DE LIBROS");
+                        operacion.listarLibros();
+                        break;
+                    case 3:
+                        System.out.println("Agregando libro:");
+                        String atributosLibro = crearLibroDesdeInputUsuario(scanner);
+                        operacion.agregarLibro(atributosLibro);
+                        break;
+                    case 4:
+                        System.out.println("Buscando libro... ");
+                        System.out.println("Ingrese el titulo del libro:");
+                        String busquedaLibro = scanner.nextLine();
+                        operacion.buscarLibro(busquedaLibro);
+                        break;
+                    case 0:
+                        System.out.println("Saliendo del menu de libros");
+                        break;
+                    default:
+                        System.out.println("Opcion incorrecta");
+                        break;
+                }
             } catch (Exception e) {
                 System.out.println("Por favor, ingresa un valor válido");
                 opcion = -1;
             }
+
         }
 
         System.out.println("Saliendo del sistema");
         scanner.close();
     }
 
-    private static void evaluarOpcion(Integer opcion, IOperacion operacion, Scanner scanner) {
-        switch (opcion) {
-        case 1:
-            operacion.iniciarArchivo();
-            System.out.println("Catálogo de libros iniciado");
-            break;
-
-        case 2:
-            System.out.println("Listado de libros");
-            operacion.listarLibros();
-            break;
-
-        case 3:
-            System.out.println("Agregando libro");
-            operacion.agregarCopiaLibro(Generador.crearCopiaLibro(scanner, operacion));
-            break;
-        default:
-            break;
-        }
-    }
-
-    private static void mostrarMenuPrincipal() {
-        System.out.println("\nSISTEMA DE GESTIÓN DE BILIOTECA");
-        System.out.println("===============================");
-        System.out.println("Elige una opción:");
-        System.out.println("1 - Iniciar catálogo de libros");
-        System.out.println("2 - Listar libros");
-        System.out.println("3 - Agregar libro");
-        System.out.println("4 - Listar lectores");
-        System.out.println("5 - Agregar lector");
-        System.out.println("6 - MENU LECTORES");
-        System.out.println("0 - SALIR");
-    }
-
-    private static void mostrarMenuLectores() {
-        System.out.println("\nSISTEMA DE GESTIÓN DE BILIOTECA");
-        System.out.println("===============================");
-        System.out.println("Elige una opción:");
-        System.out.println("1 - Volver atrás");
-        System.out.println("0 - Volver atrás");
+    private static String crearLibroDesdeInputUsuario(Scanner scanner) {
     }
 }

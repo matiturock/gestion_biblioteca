@@ -43,9 +43,21 @@ Se guardan las clases generadoras de objetos (como ser Autor o CopiaLibro) o for
 
 Vista interfaz de cara al usuario final. Se conecta a la capa **operations**.
 
+# Menús
+
+## Menu Principal
+
+1. Crea el archivo.
+2. Despliega lista de libros.
+
+## Menu Libro
+
+## Menu Lector
+
 ## Integrantes del grupo
 
 - Insfran Maximiliano
 - Piedra Paula
 - Ramírez Jésica
 - Almirón R. Matías
+
