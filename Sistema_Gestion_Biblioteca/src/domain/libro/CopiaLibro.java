@@ -34,4 +34,42 @@ public class CopiaLibro extends Libro {
                 + this.getEstadoLibro();
     }
 
+    public static class Builder {
+
+        private Integer cantidad;
+        private EstadoLibro estadoLibro;
+        private String titulo;
+        private Genero genero;
+        private Autor autor;
+
+        public Builder conTitulo(String titulo) {
+            this.titulo = titulo;
+            return this;
+        }
+
+        public Builder conCantidad(int cantidad) {
+            this.cantidad = cantidad;
+            return this;
+        }
+
+        public Builder conEstadoLibro(EstadoLibro estadoLibro) {
+            this.estadoLibro = estadoLibro;
+            return this;
+        }
+
+        public Builder conGenero(Genero genero) {
+            this.genero = genero;
+            return this;
+        }
+
+        public Builder conAutor(Autor autor) {
+            this.autor = autor;
+            return this;
+        }
+
+
+        public CopiaLibro build(){
+            return new CopiaLibro(titulo, genero, autor, cantidad, estadoLibro);
+        }
+    }
 }
