@@ -1,5 +1,7 @@
 package operations;
 
+import java.util.List;
+
 import data.AccesoDatosArchivo;
 import data.IAccesoDatos;
 import domain.Libro;
@@ -36,9 +38,14 @@ public class OperacionBiblioteca implements IOperacion {
 
     @Override
     public void listarLibros() {
-        var libros = this.datos.listarLibros(NOMBRE_RECURSO);
-        for (Libro libro : libros) {
-            libro.mostrarInformacion();
+        List<Libro> libros = this.datos.listarLibros(NOMBRE_RECURSO);
+
+        if (libros.size() != 0) {
+            for (Libro libro : libros) {
+                libro.mostrarInformacion();
+            }
+        } else {
+            System.out.println("No hay libros registrados en el archivo");
         }
     }
 
