@@ -31,9 +31,10 @@ public class Constructor {
         Integer indice = 1;
 
         for (Genero genero : generos) {
-            System.out.println(String.format("%d - %s", indice, genero.toString()));
+            System.out.print(String.format("%d - %s | ", indice, genero.toString()));
             indice++;
         }
+        System.out.println();
 
         Integer seleccionUsuario = Integer.parseInt(scanner.nextLine());
         Genero genero = generos[seleccionUsuario];
