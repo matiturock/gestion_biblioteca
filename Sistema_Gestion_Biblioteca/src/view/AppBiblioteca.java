@@ -2,6 +2,7 @@ package view;
 
 import java.util.Scanner;
 
+import domain.Libro;
 import operations.IOperacion;
 import operations.OperacionBiblioteca;
 import utils.Constructor;
@@ -39,8 +40,8 @@ public class AppBiblioteca {
                     break;
                 case 3:
                     System.out.println("Agregando libro...");
-                    String atributosLibro = Constructor.crearLibroDesdeInputUsuario(scanner);
-                    operacion.agregarLibro(atributosLibro);
+                    Libro libro = Constructor.crearLibroDesdeInputUsuario(scanner);
+                    operacion.agregarLibro(libro.toString());
                     break;
                 case 4:
                     System.out.println("Buscando libro... ");

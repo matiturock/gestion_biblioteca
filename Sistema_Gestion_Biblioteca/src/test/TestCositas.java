@@ -1,5 +1,9 @@
 package test;
 
+// import java.util.Scanner;
+
+// import domain.Genero;
+
 // import java.time.LocalDate;
 
 // import domain.persona.Autor;
@@ -45,6 +49,20 @@ public class TestCositas {
         // // TEST capturar valor del enum desde String
         // EstadoLibro estado = EstadoLibro.valueOf("PRESTADO");
         // System.out.println(estado);
+
+        // Genero[] generos = Genero.values();
+        // Scanner s = new Scanner(System.in);
+        // int opcionUsuario = -1;
+        // int indice = 1;
+
+        // for (Genero genero : generos) {
+        // System.out.println(String.format("%d - %s", indice, genero));
+        // indice++;
+        // }
+        // opcionUsuario = Integer.parseInt(s.nextLine());
+
+        // System.out.println(generos[opcionUsuario - 1]);
+        // s.close();
     }
 
 }

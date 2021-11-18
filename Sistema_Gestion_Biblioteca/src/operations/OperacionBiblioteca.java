@@ -29,11 +29,11 @@ public class OperacionBiblioteca implements IOperacion {
     @Override
     public void agregarLibro(String atributosLibro) {
         Libro libro = Constructor.instanciarLibro(atributosLibro);
+
         boolean anexar = false;
-
         anexar = this.datos.existe(NOMBRE_RECURSO);
-        datos.escribir(libro, anexar, NOMBRE_RECURSO);
 
+        datos.escribir(libro, anexar, NOMBRE_RECURSO);
     }
 
     @Override

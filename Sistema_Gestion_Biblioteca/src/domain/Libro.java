@@ -8,14 +8,13 @@ public class Libro {
     private int cantidadPrestados;
     private int totalCopias;
 
-    public Libro(String titulo, Genero genero, String autor, int cantidadEnBiblioteca, int cantidadPrestados,
-            int totalCopias) {
+    public Libro(String titulo, Genero genero, String autor, int totalCopias) {
         this.titulo = titulo;
         this.genero = genero;
         this.autor = autor;
-        this.cantidadEnBiblioteca = cantidadEnBiblioteca;
-        this.cantidadPrestados = cantidadPrestados;
         this.totalCopias = totalCopias;
+        this.cantidadEnBiblioteca = totalCopias;
+        this.cantidadPrestados = 0;
     }
 
     public String getTitulo() {
@@ -66,12 +65,17 @@ public class Libro {
         this.totalCopias = totalCopias;
     }
 
+    @Override
+    public String toString() {
+        return titulo + "," + genero + "," + autor + "," + totalCopias;
+    }
+
     public void mostrarInformacion() {
         System.out.println("TITULO:     " + this.getTitulo());
         System.out.println("- Genero:   " + this.getGenero());
         System.out.println("- Autor:    " + this.getAutor());
         System.out.println("- Copias totales:       " + this.getTotalCopias());
         System.out.println("  * En biblioteca:      " + this.getCantidadEnBiblioteca());
-        System.out.println("  * Prestado:           " + this.getCantidadEnBiblioteca());
+        System.out.println("  * Prestado:           " + this.getCantidadPrestados());
     }
 }

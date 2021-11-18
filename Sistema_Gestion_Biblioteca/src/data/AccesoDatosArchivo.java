@@ -10,7 +10,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import domain.Genero;
 import domain.Libro;
 import utils.Constructor;
 
