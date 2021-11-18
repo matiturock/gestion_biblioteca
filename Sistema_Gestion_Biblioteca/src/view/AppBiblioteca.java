@@ -26,6 +26,7 @@ public class AppBiblioteca {
             System.out.println("2 - Listar libros");
             System.out.println("3 - Agregar libro");
             System.out.println("4 - Buscar libro");
+            System.out.println("5 - Prestar libro");
             System.out.println("0 - Salir");
             try {
                 opcion = Integer.parseInt(scanner.nextLine());
@@ -48,6 +49,12 @@ public class AppBiblioteca {
                     System.out.println("Ingrese el titulo del libro:");
                     String busquedaLibro = scanner.nextLine();
                     operacion.buscarLibro(busquedaLibro);
+                    break;
+                case 5:
+                    System.out.println("Prestando libro... ");
+                    System.out.println("Ingrese el titulo del libro:");
+                    String pedirLibro = scanner.nextLine();
+                    operacion.prestarLibro(pedirLibro);
                     break;
                 case 0:
                     break;
