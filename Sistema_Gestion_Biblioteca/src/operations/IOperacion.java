@@ -10,4 +10,6 @@ public interface IOperacion {
     void listarLibros();
 
     void buscarLibro(String tituloLibro);
+
+    void prestarLibro(String titulo);
 }
