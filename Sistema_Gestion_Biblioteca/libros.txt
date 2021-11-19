@@ -1,2 +1,3 @@
-Batman,POESIA,King,5
-Superman,ROMANTICO,More,1
+Superman,CLASICO,King,5
+Batman,THRILLER,More,7
+Cujo,POLICIAL,King,4
