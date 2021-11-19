@@ -36,9 +36,9 @@ public class AccesoDatosArchivo implements IAccesoDatos {
         if (archivo.exists()) {
             archivo.delete();
             System.out.println("Sr ha borrado el archivo");
+        } else {
+            System.out.println("El archivo que intentas borrar no existe");
         }
-
-        System.out.println("El archivo que intentas borrar no existe");
     }
 
     @Override

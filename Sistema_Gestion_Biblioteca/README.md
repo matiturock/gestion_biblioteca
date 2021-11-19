@@ -2,6 +2,8 @@
 
 El presente es un Trabajo Final Integrador en el marco de la materia **Laboratorio de Programación 2**, de la carrera Tecnicatura Universitaria en Programación, de la UTN sede Resistencia, año 2021.
 
+> EntryPoint -> src/view/AppBiblioteca.java
+
 ## Qué hace la app?
 
 La aplicación está pensada para ser usada por una bibliotecaria mediante comandos en consola.
@@ -22,10 +24,7 @@ Se encarga de manejar la creación, lectura y escritura del arhivo que contiene 
 
 ### **domain**
 
-Dominio del problema. Contiene los paquetes:
-
-- libro: para CopiaLibro
-- persona: para Autor y Lector
+Dominio del problema.
 
 ### **operations**
 
@@ -37,7 +36,7 @@ Se usa para probar funcionalidades a ser implmentandas en la app.
 
 ### **utils**
 
-Se guardan las clases generadoras de objetos (como ser Autor o CopiaLibro) o formateadoras de Strings.
+Se guardan las clases generadoras de objetos.
 
 ### **view**
 
@@ -60,4 +59,3 @@ Vista interfaz de cara al usuario final. Se conecta a la capa **operations**.
 - Piedra Paula
 - Ramírez Jésica
 - Almirón R. Matías
-

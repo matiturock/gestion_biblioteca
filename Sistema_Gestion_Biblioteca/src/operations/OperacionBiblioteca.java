@@ -57,6 +57,7 @@ public class OperacionBiblioteca implements IOperacion {
         if (resultadoLibro != null) {
             System.out.println("Libro encontrado");
             resultadoLibro.mostrarInformacion();
+
         } else
             System.out.println("Libro no encontrado");
     }
@@ -65,17 +66,17 @@ public class OperacionBiblioteca implements IOperacion {
     public void prestarLibro(String titulo) {
         boolean encontrado = false;
         List<Libro> libros = this.datos.listarLibros(NOMBRE_RECURSO);
-        for (Libro libro: libros) {
+        for (Libro libro : libros) {
             if (libro.getTitulo().equalsIgnoreCase(titulo)) {
                 encontrado = true;
-                if (libro.getCantidadEnBiblioteca()>1){
+                if (libro.getCantidadEnBiblioteca() >= 1) {
                     System.out.println("Libro prestado");
-                    libro.setCantidadEnBiblioteca(libro.getCantidadEnBiblioteca()-1);
-                    libro.setCantidadPrestados(libro.getCantidadPrestados()+1);
+                    libro.setCantidadEnBiblioteca(libro.getCantidadEnBiblioteca() - 1);
+                    libro.setCantidadPrestados(libro.getCantidadPrestados() + 1);
                     libro.mostrarInformacion();
                     this.datos.borrarBase(NOMBRE_RECURSO);
                     this.datos.crearBase(NOMBRE_RECURSO);
-                    for (Libro lib:libros) {
+                    for (Libro lib : libros) {
                         datos.escribir(lib, true, NOMBRE_RECURSO);
                     }
                     break;
@@ -84,7 +85,7 @@ public class OperacionBiblioteca implements IOperacion {
                 }
             }
         }
-        if (!encontrado){
+        if (!encontrado) {
             System.out.println("No se encontro el libro");
         }
     }

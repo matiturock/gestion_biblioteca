@@ -37,7 +37,7 @@ public class Constructor {
         System.out.println();
 
         Integer seleccionUsuario = Integer.parseInt(scanner.nextLine());
-        Genero genero = generos[seleccionUsuario];
+        Genero genero = generos[seleccionUsuario - 1];
 
         System.out.println("Ingresa el nombre del autor:");
         String autor = scanner.nextLine();

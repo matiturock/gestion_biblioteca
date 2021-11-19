@@ -1,0 +1,2 @@
+Batman,POESIA,King,5
+Superman,ROMANTICO,More,1
